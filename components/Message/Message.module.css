@@ -1,0 +1,65 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding: 20%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+  text-align: center;
+
+  & h1 {
+    color: white;
+  }
+
+  & p {
+    font-weight: bold;
+    background-color: white;
+    padding: 5px;
+
+    & span {
+      &:nth-child(1n) {
+        color: red;
+      }
+      &:nth-child(2n) {
+        color: blue;
+      }
+      &:nth-child(4n) {
+        color: violet;
+      }
+    }
+  }
+
+}
+
+
+.container__corazones {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  animation: moveDown infinite 3s linear;
+}
+
+.container__sam {
+  width: 300px;
+  height: 150px;
+  @media (min-width: 800px) {
+    width: 600px;
+    height: 300px;
+  }
+}
+
+@keyframes moveDown {
+  from {
+    top: -100%;
+    opacity: 1;
+  }
+
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
